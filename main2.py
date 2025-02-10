@@ -15,13 +15,15 @@ from dotenv import load_dotenv
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# API Configuration
-load_dotenv()
-API_KEY = os.getenv("GOOGLE_API_KEY")
-if not API_KEY:
-    raise ValueError("API key not found. Make sure .env contains GOOGLE_API_KEY and is properly loaded.")
 
-# Configure Google Gemini API with the key
+
+API_KEY = st.secrets["GOOGLE_API_KEY"]
+#load_dotenv()
+#API_KEY = os.getenv("GOOGLE_API_KEY")
+#if not API_KEY:
+#    raise ValueError("API key not found. Make sure .env contains GOOGLE_API_KEY and is properly loaded.")
+
+## Configure Google Gemini API with the key
 genai.configure(api_key=API_KEY)
 
 
