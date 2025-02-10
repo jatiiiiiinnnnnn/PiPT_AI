@@ -1,4 +1,14 @@
 # created by virtualenv automatically
-.venv/etc
-.env
+# Ignore virtual environment
 .venv/
+
+# Ignore environment variables file (contains API keys)
+.env
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore PyCharm settings (optional)
+.idea/
