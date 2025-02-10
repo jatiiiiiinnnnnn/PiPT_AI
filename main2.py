@@ -80,7 +80,6 @@ SLIDE_LAYOUTS = {
 @st.cache_resource
 def initialize_genai():
     """Initialize the Gemini model with caching"""
-     """Initialize the Gemini model with caching"""
     try:
         api_key = st.secrets["GOOGLE_API_KEY"]  # Fetch API key from Streamlit secrets
         genai.configure(api_key=api_key)
