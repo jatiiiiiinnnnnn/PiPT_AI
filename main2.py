@@ -17,19 +17,17 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Get API key from Streamlit secrets and configure Gemini
+# Configure Gemini directly with the API key from secrets
 try:
-    API_KEY = st.secrets["GOOGLE_API_KEY"]
+    genai.configure(api_key=st.secrets.GOOGLE_API_KEY)  # Use dot notation instead
 except Exception as e:
-    st.error("Failed to load API key from Streamlit secrets. Check your secrets configuration.")
+    st.error(f"Failed to initialize Gemini API: {str(e)}")
+    logger.error(f"API configuration error: {str(e)}")
     st.stop()
 
-# Configure Gemini with the API key
-try:
-    genai.configure(api_key=API_KEY)
-except Exception as e:
-    st.error(f"Failed to configure Gemini API: {str(e)}")
-    st.stop()
-
+# Add a debug button to check if secrets are loaded
+if st.button("Debug: Check API Key"):
+    st.write("First few characters of API key:", st.secrets.GOOGLE_API_KEY[:5] + "...")
 
 
 
