@@ -11,6 +11,11 @@ import logging
 import os
 from dotenv import load_dotenv
 
+st.set_page_config(
+    page_title="AI PowerPoint Generator",
+    page_icon="https://img.icons8.com/?size=100&id=52564&format=png&color=000000",
+    layout="wide"
+)
 
 # First, configure logging
 logging.basicConfig(level=logging.INFO)
@@ -240,8 +245,7 @@ def create_powerpoint(slides_content: List[Dict], style_settings: StyleSettings)
 
 
 def main():
-    st.set_page_config(page_title="AI PowerPoint Generator", page_icon="https://img.icons8.com/?size=100&id=52564&format=png&color=000000", layout="wide")
-
+   
     st.image("https://img.icons8.com/?size=100&id=52564&format=png&color=000000",width=50)
     st.title("AI PowerPoint Generator")
     st.write("Generate professional presentations using AI")
