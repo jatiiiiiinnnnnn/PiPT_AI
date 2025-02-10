@@ -37,7 +37,7 @@ if st.button("Debug: Check API Key"):
 #    raise ValueError("API key not found. Make sure .env contains GOOGLE_API_KEY and is properly loaded.")
 
 ## Configure Google Gemini API with the key
-genai.configure(api_key=API_KEY)
+#genai.configure(api_key=API_KEY)
 
 
 
