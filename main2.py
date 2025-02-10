@@ -11,13 +11,19 @@ import logging
 import os
 from dotenv import load_dotenv
 
+
+try:
+    genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+except Exception as e:
+    st.error("Failed to initialize Gemini API. Please check your API key configuration in Streamlit secrets.")
+    st.stop()
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 
-API_KEY = st.secrets["GOOGLE_API_KEY"]
+
 #load_dotenv()
 #API_KEY = os.getenv("GOOGLE_API_KEY")
 #if not API_KEY:
